@@ -12,7 +12,8 @@ __global__ void MatrixMultiplyI(int *matrix1, int *matrix2, int *matrix3, int m1
 
   __shared__ int ds_M[BLOCKSIZE][BLOCKSIZE];
   __shared__ int ds_N[BLOCKSIZE][BLOCKSIZE];
-
+  
+  int bx = blockIdx.x;
   int by = blockIdx.y;
   int tx = threadIdx.x;
   int ty = threadIdx.y;
